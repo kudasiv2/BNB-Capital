@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNB Capital - Download Resources</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/ej7abf.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            500: '#0a192f',
+                            600: '#0a1429',
+                        },
+                        glow: {
+                            500: '#00ffaa',
+                            600: '#00dd92',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a192f 0%, #143a5a 50%, #00ffaa 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00ffaa 0%, #00aaff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-button {
+            background: linear-gradient(90deg, #00ffaa 0%, #00aaff 100%);
+        }
+        .gradient-button:hover {
+            background: linear-gradient(90deg, #00dd92 0%, #0099dd 100%);
+        }
+        .gradient-card {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(20, 58, 90, 0.8) 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 25, 47, 0.7);
+        }
+        .navy-glow-gradient {
+            background: linear-gradient(135deg, #0a192f 0%, #00ffaa 150%);
+        }
+        @keyframes downloadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .download-animation {
+            animation: downloadProgress 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white" onclick="closeMenuOnClickOutside(event)">
+    <!-- Header -->
+    <header class="fixed w-full glass-effect z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://files.catbox.moe/ej7abf.png" alt="BNB Capital Logo" class="h-10 md:h-12">
+                <span class="ml-2 text-xl font-bold gradient-text">BNB CAPITAL</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-[#00ffaa] transition"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="#documents" class="hover:text-[#00ffaa] transition"><i class="fas fa-file-pdf mr-2"></i>Documents</a>
+                <a href="https://bnbcapital.vercel.app/" target="_blank" class="hover:text-[#00ffaa] transition"><i class="fas fa-info-circle mr-2"></i>Explanation</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none" onclick="toggleMenu(event)">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-effect py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="hover:text-[#00ffaa] transition"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="#documents" class="hover:text-[#00ffaa] transition"><i class="fas fa-file-pdf mr-2"></i>Documents</a>
+                <a href="https://bnbcapital.vercel.app/" target="_blank" class="hover:text-[#00ffaa] transition"><i class="fas fa-info-circle mr-2"></i>Explanation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-32 pb-20 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">BNB Capital <span class="gradient-text">Resources</span></h1>
+            <h2 class="text-2xl md:text-4xl font-semibold mb-8">Download Official Documents</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-6">Access our comprehensive guides and documentation about BNB Capital's innovative yield farming platform. All resources available in multiple languages.</p>
+            
+            <!-- Explanation Button -->
+            <a href="https://bnbcapital.vercel.app/" target="_blank" class="inline-flex items-center gradient-button text-navy-600 font-bold py-3 px-6 rounded-lg transition mt-4">
+                <i class="fas fa-info-circle mr-2"></i>Explanation
+            </a>
+        </div>
+    </section>
+
+    <!-- PDF Downloads Section -->
+    <section id="documents" class="py-20 navy-glow-gradient px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text"><i class="fas fa-file-pdf mr-3"></i>Download Documents</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- English PDF -->
+                <div class="gradient-card p-6 rounded-xl text-center">
+                    <div class="text-5xl mb-4 text-[#00ffaa]">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">BNB Capital English</h3>
+                    <p class="mb-4">Complete guide to BNB Capital in English</p>
+                    <button onclick="downloadPdf('https://www.dropbox.com/scl/fi/a10i60lvtmmvsqrm4k5kl/BNB-Capital-English.pdf?rlkey=n4so798xrq7ktp226m1k4qmxx&st=5ggiesd8&dl=1', this)" class="gradient-button text-navy-600 font-bold py-2 px-4 rounded-lg transition flex items-center justify-center mx-auto">
+                        <i class="fas fa-download mr-2"></i>Download PDF
+                    </button>
+                    <div class="h-1 bg-gray-700 mt-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#00ffaa] progress-bar hidden"></div>
+                    </div>
+                </div>
+                
+                <!-- French PDF -->
+                <div class="gradient-card p-6 rounded-xl text-center">
+                    <div class="text-5xl mb-4 text-[#00ffaa]">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">BNB Capital French</h3>
+                    <p class="mb-4">Guide complet de BNB Capital en français</p>
+                    <button onclick="downloadPdf('https://www.dropbox.com/scl/fi/vvugte7eahaqhaeelklrr/BNB-Capital-French.pdf?rlkey=lqmiduvq6o0x58bud6eqyf7yq&st=kj1bnlfp&dl=1', this)" class="gradient-button text-navy-600 font-bold py-2 px-4 rounded-lg transition flex items-center justify-center mx-auto">
+                        <i class="fas fa-download mr-2"></i>Download PDF
+                    </button>
+                    <div class="h-1 bg-gray-700 mt-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#00ffaa] progress-bar hidden"></div>
+                    </div>
+                </div>
+                
+                <!-- Hindi PDF -->
+                <div class="gradient-card p-6 rounded-xl text-center">
+                    <div class="text-5xl mb-4 text-[#00ffaa]">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">BNB Capital Hindi</h3>
+                    <p class="mb-4">BNB Capital की हिंदी में पूरी गाइड</p>
+                    <button onclick="downloadPdf('https://www.dropbox.com/scl/fi/5rix05kcid98uuzw1ug1v/BNB-Capital-Hindi.pdf?rlkey=omsjlnl8x7i5jybdpbyvg5rky&st=fefbkfyb&dl=1', this)" class="gradient-button text-navy-600 font-bold py-2 px-4 rounded-lg transition flex items-center justify-center mx-auto">
+                        <i class="fas fa-download mr-2"></i>Download PDF
+                    </button>
+                    <div class="h-1 bg-gray-700 mt-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#00ffaa] progress-bar hidden"></div>
+                    </div>
+                </div>
+                
+                <!-- Indonesian PDF -->
+                <div class="gradient-card p-6 rounded-xl text-center">
+                    <div class="text-5xl mb-4 text-[#00ffaa]">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">BNB Capital Indonesian</h3>
+                    <p class="mb-4">Panduan lengkap BNB Capital dalam Bahasa Indonesia</p>
+                    <button onclick="downloadPdf('https://www.dropbox.com/scl/fi/es1qqnc3horxyvlc8qv2j/BNB-Capital-Indonesian.pdf?rlkey=lu8d77oplapo2e930y7slm83l&st=j33qkt86&dl=1', this)" class="gradient-button text-navy-600 font-bold py-2 px-4 rounded-lg transition flex items-center justify-center mx-auto">
+                        <i class="fas fa-download mr-2"></i>Download PDF
+                    </button>
+                    <div class="h-1 bg-gray-700 mt-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#00ffaa] progress-bar hidden"></div>
+                    </div>
+                </div>
+                
+                <!-- Italian PDF -->
+                <div class="gradient-card p-6 rounded-xl text-center">
+                    <div class="text-5xl mb-4 text-[#00ffaa]">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">BNB Capital Italian</h3>
+                    <p class="mb-4">Guida completa a BNB Capital in italiano</p>
+                    <button onclick="downloadPdf('https://www.dropbox.com/scl/fi/e3frx4vaqil7tgzfphd8x/BNB-Capital-Italian.pdf?rlkey=a9w2foi3vwgt7ckrmcdajq9xl&st=1591n1q8&dl=1', this)" class="gradient-button text-navy-600 font-bold py-2 px-4 rounded-lg transition flex items-center justify-center mx-auto">
+                        <i class="fas fa-download mr-2"></i>Download PDF
+                    </button>
+                    <div class="h-1 bg-gray-700 mt-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#00ffaa] progress-bar hidden"></div>
+                    </div>
+                </div>
+                
+                <!-- Spanish PDF -->
+                <div class="gradient-card p-6 rounded-xl text-center">
+                    <div class="text-5xl mb-4 text-[#00ffaa]">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">BNB Capital Spanish</h3>
+                    <p class="mb-4">Guía completa de BNB Capital en español</p>
+                    <button onclick="downloadPdf('https://www.dropbox.com/scl/fi/5k0u8hxzjki3r4b4j6w2q/BNB-Capital-Spanish.pdf?rlkey=ojl8f9b5mf0uborcysszrtyte&st=owlqi368&dl=1', this)" class="gradient-button text-navy-600 font-bold py-2 px-4 rounded-lg transition flex items-center justify-center mx-auto">
+                        <i class="fas fa-download mr-2"></i>Download PDF
+                    </button>
+                    <div class="h-1 bg-gray-700 mt-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#00ffaa] progress-bar hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-500 py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="https://files.catbox.moe/ej7abf.png" alt="BNB Capital Logo" class="h-10 mr-3">
+                        <span class="text-xl font-bold gradient-text">BNB CAPITAL</span>
+                    </div>
+                    <p class="mb-6">Access our comprehensive guides and documentation about BNB Capital's innovative yield farming platform. All resources available in multiple languages.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://t.me/bnbcapitalofficial" target="_blank" class="text-2xl text-[#00ffaa] hover:text-white"><i class="fab fa-telegram"></i></a>
+                        <a href="https://chat.whatsapp.com/FEWy1a95Yha6H1yK2jMwUM" target="_blank" class="text-2xl text-[#00ffaa] hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-[#00ffaa]"><i class="fas fa-home mr-2"></i>Home</a></li>
+                        <li><a href="#documents" class="hover:text-[#00ffaa]"><i class="fas fa-file-pdf mr-2"></i>Documents</a></li>
+                        <li><a href="https://bnbcapital.vercel.app/" target="_blank" class="hover:text-[#00ffaa]"><i class="fas fa-info-circle mr-2"></i>Explanation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-navy-400 mt-12 pt-8 text-center">
+                <p>© 2025 BNB Capital</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu(event) {
+            event.stopPropagation();
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // Close menu when clicking outside
+        function closeMenuOnClickOutside(event) {
+            const menu = document.getElementById('mobile-menu');
+            const menuToggle = document.getElementById('menu-toggle');
+            
+            if (!menu.classList.contains('hidden') && 
+                !menu.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        }
+
+        // Function to handle PDF download with animation
+        function downloadPdf(url, button) {
+            // Show progress bar
+            const progressBar = button.nextElementSibling.querySelector('.progress-bar');
+            progressBar.classList.remove('hidden');
+            progressBar.classList.add('download-animation');
+            
+            // Change button text and disable it
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Downloading...';
+            button.disabled = true;
+            
+            // Create a temporary anchor element to trigger download
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            
+            // Simulate download process
+            setTimeout(() => {
+                a.click();
+                
+                // Reset button after download
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-check mr-2"></i>Downloaded!';
+                    progressBar.classList.remove('download-animation');
+                    
+                    // Revert button to original state after a delay
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        progressBar.classList.add('hidden');
+                    }, 2000);
+                }, 500);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
